@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Ecole\\Master\\ESI4\\DevOps\\projet\\DevOps\\Adelys\\Adelys\\Adelys.csproj": {}
+    "C:\\Users\\Norime\\Documents\\GitHub\\DevOps\\Adelys\\Adelys\\Adelys.csproj": {}
   },
   "projects": {
-    "C:\\Ecole\\Master\\ESI4\\DevOps\\projet\\DevOps\\Adelys\\Adelys\\Adelys.csproj": {
+    "C:\\Users\\Norime\\Documents\\GitHub\\DevOps\\Adelys\\Adelys\\Adelys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Ecole\\Master\\ESI4\\DevOps\\projet\\DevOps\\Adelys\\Adelys\\Adelys.csproj",
+        "projectUniqueName": "C:\\Users\\Norime\\Documents\\GitHub\\DevOps\\Adelys\\Adelys\\Adelys.csproj",
         "projectName": "Adelys",
-        "projectPath": "C:\\Ecole\\Master\\ESI4\\DevOps\\projet\\DevOps\\Adelys\\Adelys\\Adelys.csproj",
-        "packagesPath": "C:\\Users\\gugus\\.nuget\\packages\\",
-        "outputPath": "C:\\Ecole\\Master\\ESI4\\DevOps\\projet\\DevOps\\Adelys\\Adelys\\obj\\",
+        "projectPath": "C:\\Users\\Norime\\Documents\\GitHub\\DevOps\\Adelys\\Adelys\\Adelys.csproj",
+        "packagesPath": "C:\\Users\\Norime\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Norime\\Documents\\GitHub\\DevOps\\Adelys\\Adelys\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gugus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Norime\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
