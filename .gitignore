@@ -1,7 +1,11 @@
+
+Adelys/.vs/Adelys/
+Adelys/Adelys/obj/Debug/
 ###################
 # compiled source #
 ###################
 *.com
+*.vs
 *.class
 *.dll
 *.exe
