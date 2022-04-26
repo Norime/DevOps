@@ -1,6 +1,6 @@
 
-Adelys/.vs/Adelys/
-Adelys/Adelys/obj/Debug/
+Adelys/.vs/Adelys/*
+Adelys/Adelys/obj/*
 ###################
 # compiled source #
 ###################
