@@ -50,4 +50,4 @@ jobs:
         with: 
             app-name: ${{ env.WEBAPP_NAME }} 
             publish-profile: ${{ secrets.AZURE_WEBAPP }}
-            package: ./Adelys/Adelys/bin/Release/net6.0/Adelys.dll
+            package: /site/wwwroot/Adelys/Adelys/bin/Release/net6.0/Adelys.dll
