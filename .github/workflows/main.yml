@@ -44,10 +44,33 @@ jobs:
       - name: Test
         run: dotnet test ./Adelys/AdelysTests/AdelysTests.csproj --no-restore --verbosity normal
 
+      - name: dotnet publish
+        run: dotnet publish ./Adelys/Adelys/Adelys.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
-      - name: 'Run Azure webapp deploy action using publish profile credentials'
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: .net-app
+          path: ${{env.DOTNET_ROOT}}/myapp
+
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v2
+        with:
+          name: .net-app
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
-        with: 
-            app-name: ${{ env.WEBAPP_NAME }} 
-            publish-profile: ${{ secrets.AZURE_WEBAPP }}
-            package: '${{env.WEBAPP_PACKAGE_PATH}}/Adelys/Adelys'
+        with:
+          app-name: 'AppWeb-DevOps'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZURE_WEBAPP }}
+          package: .
