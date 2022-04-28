@@ -13,6 +13,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  WEBAPP_NAME: AppWeb-DevOps  # Azure Web App Name
+  WEBAPP_PACKAGE_PATH: './Adelys/Adelys/Adelys.csproj'      # Project Path Location default to root(.)
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -32,21 +36,17 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
         # Runs a single command using the runners shell
       - name: Install dependencies
-        run: dotnet restore
-
-      - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet restore ./Adelys/Adelys.sln
 
       - name: Build
         run: dotnet build ./Adelys/Adelys/Adelys.csproj --configuration Release --no-restore
 
       - name: Test
         run: dotnet test ./Adelys/AdelysTests/AdelysTests.csproj --no-restore --verbosity normal
-      - name: Test
-        run: dotnet test --no-restore --verbosity normal
 
-        # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+
+      - name: 'Run Azure webapp deploy action using publish profile credentials'
+        uses: azure/webapps-deploy@v2
+        with: 
+            app-name: ${{ env.WEBAPP_NAME }} 
+            publish-profile: ${{ secrets.AZURE_WEBAPP }} 
