@@ -15,7 +15,7 @@ on:
 
 env:
   WEBAPP_NAME: AppWeb-DevOps  # Azure Web App Name
-  WEBAPP_PACKAGE_PATH: './Adelys/Adelys/Adelys.csproj'      # Project Path Location default to root(.)
+  WEBAPP_PACKAGE_PATH: '.'      # Project Path Location default to root(.)
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -50,4 +50,4 @@ jobs:
         with: 
             app-name: ${{ env.WEBAPP_NAME }} 
             publish-profile: ${{ secrets.AZURE_WEBAPP }}
-            package: /site/wwwroot/Adelys/Adelys/bin/Release/net6.0/Adelys.dll
+            package: '${{env.WEBAPP_PACKAGE_PATH}}/Adelys/Adelys'
